@@ -1,16 +1,14 @@
-const url = "https://www.dolarsi.com/api/api.php?type=dolar";
+const url = "https://dolarapi.com/v1/dolares/blue";
 let blueCompra;
+let blueVenta;
 
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    const dolarBlue = data.filter(
-      (casa) => casa.casa.nombre === "Blue"
-    )[0];
-    blueCompra = parseFloat(dolarBlue.casa.compra.replace(",", "."));
-    blueVentaa = parseFloat(dolarBlue.casa.venta.replace(",", "."));
+    blueCompra = parseFloat(data.compra);
+    blueVenta = parseFloat(data.venta);
     const blueHtmlCompra = `Dólar blue compra: $${blueCompra}`;
-    const blueHtmlVenta = `Dólar blue venta: $${blueVentaa}`;
+    const blueHtmlVenta = `Dólar blue venta: $${blueVenta}`;
     document.getElementById("blueHtmlCompra").innerHTML = blueHtmlCompra;
     document.getElementById("blueHtmlVenta").innerHTML = blueHtmlVenta;
   })
@@ -24,8 +22,7 @@ currencyFieldInput.addEventListener("change", () => {
 });
 
 function calcular(valor, resultado) {
-  const conversion = parseFloat(valor) * blueVentaa;
+  const conversion = parseFloat(valor) * blueVenta;
   const formattedNumber = conversion.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   document.getElementById("currency-field-result-number").innerHTML = "Resultado: "+ formattedNumber +" pesos Arg";
-  
 }
