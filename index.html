@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversor</title>
     <link rel="stylesheet" href="assets/reset.css" />
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <script src="https://cdn.anychart.com/releases/8.12.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.1/js/anychart-ui.min.js"></script>
+</head>
+<body>
     <div class="contenedorMain">
-      <header><h1>Conversor dolar blue</h1></header>
-      <div class="subtitulo">
-        <h2>Valor del dólar blue</h2>
-      </div>
-      <main>
-        <div class="valoresApi">
-          <div id="blueHtmlCompra"></div>
-          <div id="blueHtmlVenta"></div>
+        <header><h1>Conversor dólar blue</h1></header>
+        <div class="subtitulo">
+            <h2>Valor del dólar blue</h2>
         </div>
-        <div  class="calculator">
-          <div ><input type="text" id="input"  size="5" requiered placeholder="Usd?" class="currency-field-input" /></div>
-          <div id="currency-field-result-number"></div>
+        <main>
+            <div class="valoresApi">
+                <div id="blueHtmlCompra"></div>
+                <div id="blueHtmlVenta"></div>
+            </div>
+            <div class="calculator">
+                <div><input type="text" id="input" size="5" required placeholder="Usd?" class="currency-field-input" /></div>
+                <div id="currency-field-result-number"></div>
+            </div>
+        </main>
+        <div class="imgYisus">
+            <img id="yisus" src="img/jesus-bailando.gif" alt="Homer">
         </div>
-      </main>
-      <div class="imgYisus">
-        <img id="yisus"; src="img/jesus-bailando.gif" alt="Homer">
-      </div>
+    <div id="graficazo"></div>
     </div>
+    <!-- <div id="graficazo"></div> -->
     <footer></footer>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
